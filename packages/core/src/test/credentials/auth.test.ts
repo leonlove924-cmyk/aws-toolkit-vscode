@@ -384,7 +384,7 @@ describe('Auth', function () {
             sinon.restore()
         })
 
-        it('lists linked conections for SSO connections', async function () {
+        it('lists linked connections for SSO connections', async function () {
             await auth.createConnection(linkedSsoProfile)
             const connections = await auth.listAndTraverseConnections().promise()
             assert.deepStrictEqual(
@@ -416,7 +416,7 @@ describe('Auth', function () {
             )
         })
 
-        it('caches linked conections when the source connection becomes invalid', async function () {
+        it('caches linked connections when the source connection becomes invalid', async function () {
             const conn = await auth.createConnection(linkedSsoProfile)
             await auth.listAndTraverseConnections().promise()
             await auth.invalidateCachedCredentials(conn)
